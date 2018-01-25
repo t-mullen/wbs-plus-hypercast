@@ -12,7 +12,7 @@ A truly web-based broadcasting experience. Requires [Beaker Browser](https://bea
 
 1. Go to [https://rationalcoding.github.io/wbs-plus-hypercast/](https://rationalcoding.github.io/wbs-plus-hypercast/).
 
-2. Add some sources and press "Start Streaming", in any order.
+2. Add some sources and press "Start Streaming".
 
 3. Move sources and change streams while broadcasting, just like you would on OBS.
 
