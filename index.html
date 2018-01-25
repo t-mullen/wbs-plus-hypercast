@@ -32,6 +32,8 @@
     var viewURL = getParameterByName('view', window.location.href)
 
     if (viewURL) {
+        if (!DatArchive) return window.alert("This application only works in Beaker Browser!")
+
         var videoElement = Hypercast.view(viewURL)
         videoElement.className = 'viewVideo'
         videoElement.autoplay = true
@@ -45,6 +47,8 @@
         var wbs = new WBS(div)
   
         wbs.on('stream', function (stream) {
+            if (!DatArchive) return window.alert("This application only works in Beaker Browser!")
+
             async function go () {
                 var url = await Hypercast.broadcast(stream)
 
