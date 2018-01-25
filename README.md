@@ -2,7 +2,7 @@
 
 ## Peer-to-peer live video with advanced realtime editing? On the web? You bet!
 
-A truly web-based broadcasting experience. Requires [Beaker Browser](https://beakerbrowser.com/).
+Requires [Beaker Browser](https://beakerbrowser.com/).
 
 [WBS](https://github.com/RationalCoding/Web-Broadcasting-Software) allows for an OBS-like experience for the broadcaster.
 
