@@ -14,7 +14,7 @@ Requires [Beaker Browser](https://beakerbrowser.com/).
 
 2. Add some sources and press "Start Streaming".
 
-3. Move sources and change streams while broadcasting, just like you would on OBS.
+3. Move sources and change scenes while broadcasting, just like you would on OBS.
 
 4. Share the link in the top left to let anyone watch your broadcast over the Dat protocol!
 
