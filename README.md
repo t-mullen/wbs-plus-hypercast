@@ -4,13 +4,13 @@
 
 Requires [Beaker Browser](https://beakerbrowser.com/).
 
-[WBS](https://github.com/RationalCoding/Web-Broadcasting-Software) allows for an OBS-like experience for the broadcaster.
+[WBS](https://github.com/t-mullen/Web-Broadcasting-Software) allows for an OBS-like experience for the broadcaster.
 
-[Hypercast](https://github.com/RationalCoding/hypercast-browser) streams the video over the P2P Dat protocol.
+[Hypercast](https://github.com/t-mullen/hypercast-browser) streams the video over the P2P Dat protocol.
 
 ## Demo
 
-1. Go to [https://rationalcoding.github.io/wbs-plus-hypercast/](https://rationalcoding.github.io/wbs-plus-hypercast/).
+1. Go to [https://t-mullen.github.io/wbs-plus-hypercast/](https://t-mullen.github.io/wbs-plus-hypercast/).
 
 2. Add some sources and press "Start Streaming".
 
