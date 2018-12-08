@@ -24,54 +24,60 @@
     </style>
 </head>
 <body>
-
+    <h1 id="intro">Click Anywhere to Start</h1>
 </body>
 <script src="static/wbs.js"></script>
 <script src="static/hypercast.js"></script>
 <script>
-    var viewURL = getParameterByName('view', window.location.href)
+    window.addEventListener('click', () => {
+        var intro = document.querySelector('#intro')
+        if (!intro) return
+        intro.parentElement.removeChild(intro)
+        
+        var viewURL = getParameterByName('view', window.location.href)
 
-    if (viewURL) {
-        if (!window.DatArchive) window.alert("This application only works in Beaker Browser!")
-
-        var videoElement = Hypercast.view(viewURL)
-        videoElement.className = 'viewVideo'
-        videoElement.autoplay = true
-        videoElement.oncanplay = function () {
-            videoElement.play()
-        }
-        document.body.appendChild(videoElement)
-    } else {
-        var div = document.createElement('div')
-        document.body.appendChild(div)
-        var wbs = new WBS(div)
-  
-        wbs.on('stream', function (stream) {
+        if (viewURL) {
             if (!window.DatArchive) window.alert("This application only works in Beaker Browser!")
 
-            async function go () {
-                var url = await Hypercast.broadcast(stream)
-
-                var alert = document.createElement('div')
-                alert.className = 'viewUrl'
-                alert.innerHTML = (window.location.href + '?view=' + url)
-                document.body.appendChild(alert)
+            var videoElement = Hypercast.view(viewURL)
+            videoElement.className = 'viewVideo'
+            videoElement.autoplay = true
+            videoElement.oncanplay = function () {
+                videoElement.play()
             }
-            go()
-        })
-        wbs.on('stopstream', function () {
-            document.body.removeChild(document.querySelector('.viewUrl'))
-        })
-    }
+            document.body.appendChild(videoElement)
+        } else {
+            var div = document.createElement('div')
+            document.body.appendChild(div)
+            var wbs = new WBS(div)
 
-    function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
+            wbs.on('stream', function (stream) {
+                if (!window.DatArchive) window.alert("This application only works in Beaker Browser!")
+
+                async function go () {
+                    var url = await Hypercast.broadcast(stream)
+
+                    var alert = document.createElement('div')
+                    alert.className = 'viewUrl'
+                    alert.innerHTML = (window.location.href + '?view=' + url)
+                    document.body.appendChild(alert)
+                }
+                go()
+            })
+            wbs.on('stopstream', function () {
+                document.body.removeChild(document.querySelector('.viewUrl'))
+            })
+        }
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+    })
 </script>
 </html>
